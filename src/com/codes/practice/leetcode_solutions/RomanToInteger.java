@@ -1,4 +1,4 @@
-package com.java.myWay;
+package src.com.codes.practice.leetcode_solutions;
 
 import java.util.HashMap;
 import java.util.Map;
