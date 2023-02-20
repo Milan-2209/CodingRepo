@@ -1,4 +1,4 @@
-package com.ford.practice.general;
+package src.com.codes.practice.general;
 
 import java.util.*;
 

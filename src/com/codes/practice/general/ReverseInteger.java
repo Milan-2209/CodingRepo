@@ -1,4 +1,4 @@
-package com.java.myWay;
+package src.com.codes.practice.general;
 
 import java.util.Scanner;
 
@@ -14,13 +14,13 @@ public class ReverseInteger {
             }
         }
         else{
-            int newNum = (x - x) - x;
+            int newNum = -x;
             while(newNum > 0){
                 int rem = newNum % 10;
                 revInt = revInt * i + rem ;
                 newNum/=10;
             }
-            revInt = (revInt - revInt) - revInt;
+            revInt = -revInt;
         }
         if(Integer.MIN_VALUE<revInt && revInt<Integer.MAX_VALUE-1)
             return revInt;
