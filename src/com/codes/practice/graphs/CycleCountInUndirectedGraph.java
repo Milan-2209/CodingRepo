@@ -1,4 +1,4 @@
-package com.ford.practice.graphs;
+package src.com.codes.practice.graphs;
 
 import java.util.*;
 
@@ -15,21 +15,21 @@ public class CycleCountInUndirectedGraph {
         int count = 0;
         for(int a : keys){
             if(!visited.contains(a)){
-                if(countCyclesSecondWay(graph,a,parent,visited))
+                if(detectCyclesSecondWay(graph,a,parent,visited))
                     count+=1;
             }
         }
-//        System.out.println(visited);
-//        System.out.println(parent);
+        System.out.println(visited);
+        System.out.println(parent);
         return count;
     }
 
-    private static boolean countCycles(Map<Integer, List<Integer>> graph, int a, int parent,List<Integer> v) {
+    private static boolean detectCycles(Map<Integer, List<Integer>> graph, int a, int parent,List<Integer> v) {
         v.add(a);
         List<Integer> neighbours = graph.get(a);
         for(int n : neighbours){
             if(!v.contains(n)) {
-                if (countCycles(graph, n, a, v))
+                if (detectCycles(graph, n, a, v))
                     return true;
             }
             else if(n!=parent)
@@ -38,7 +38,7 @@ public class CycleCountInUndirectedGraph {
         return false;
     }
 
-    private static boolean countCyclesSecondWay(Map<Integer, List<Integer>> graph, int a, int[] parent,List<Integer> v) {
+    private static boolean detectCyclesSecondWay(Map<Integer, List<Integer>> graph, int a, int[] parent,List<Integer> v) {
         if(v.contains(a))
             return false;
         Stack<Integer> stack = new Stack<>();
@@ -70,7 +70,7 @@ public class CycleCountInUndirectedGraph {
         undirectedGraph.add(new ArrayList<>(){{add(6);add(7);}});
         undirectedGraph.add(new ArrayList<>(){{add(7);add(8);}});
         undirectedGraph.add(new ArrayList<>(){{add(5);add(8);}});
-        System.out.println(cycleCountInUndirectedGraph(undirectedGraph));
+        System.out.println(cycleCountInUndirectedGraph(undirectedGraph));//expected answer 1
 
     }
 }
